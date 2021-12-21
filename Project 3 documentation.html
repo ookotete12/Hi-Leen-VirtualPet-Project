@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body{
+            background: rgba(76, 175, 80, 0.3);     
+        }
+        .info { 
+    display: flex;
+    flex-wrap: nowrap;
+    }
+             .info .Text{
+        float: right;
+        width: 70%;
+        padding: 10px;
+        height: 300px;
+        text-align: left;
+    }
+    .info .image{
+        float: left;
+        width: 30%;
+        padding: 10px;
+        height: 300px;
+        text-align: left;
+    }
+    h1{
+        font-size: 50px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color:dimgray;
+    }
+    p{
+        font-size: 18px;
+}
+        </style>
+        <script>
+            
+        </script>
+
+    </head>
+    <body>
+        <center>
+        <h1>Meet my Virtual Pet: Hi-Leen</h1>
+    </center>
+        <div class="info">
+        <div class="image">
+        <img src="Neut.jpg" width="300px">
+        </div>
+        <div class="Text">
+            <h2><u>My Virtual Pet Hi-Leen</u></h2>
+        <p>Hi-Leen, known by everyone else as Eileen, is a freshman CS major at Drexel University. In Northeast Philadelphia born and raised, is where Eileen spent most of her days. She is a multi-talented individual, a French Horn playing hurdler who loves the TV show the Office. She also likes movies like the Harry Potter series, Interstellar, and the Breakfast Club to name a few. Her favorite color is blue and she loves her black cats Smokey and Luna. The concept of the project Hi-Leen was inspired by the Pixar movie InsideOut which is about a girl named Riley who has a bunch of little people inside her who control her different emotions. The reason for choosing this concept was because I enjoy the idea of every living thing having things in thier heads which cause them to react to different situations.  </p>
+        <h2>How Did Eileen Become My Virtual Pet?</h2>
+        <p>Sadly, I must note that Eileen became my virtual pet against her will, I am required to disclose that she involuntarily participated.</p>
+      
+
+
+
+        <h2> Eileen's States</h2>
+        <p>Neut</p>
+        <p>Happy</p> 
+        <p>Good</p> 
+        <p>Blush</p>
+        <p>Really</p> 
+        <p>Sleepy</p> 
+        <p>What</p> 
+        <p>Surprise</p> 
+        <p>Damn</p>  
+        
+
+
+        <h2> How to Make Eileen Change States</h2>
+        <h3><u>Feed</u></h3>
+        <p>If Eileen is in a neutral state and you feed her, she becomes happy.</p>
+        <p>If Eileen is happy and you feed her some more, then she becomes annoyed.</p>
+        <p>If Eileen is annoyed and you try feeding her again, she becomes angry.</p>
+        <p>If Eileen is tired and you feed her, she could either become happy, or be annoyed.</p>
+        <p>If Eileen is asleep and you feed her,she becomes happy.</p>
+        <p>If Eileen and you try to feed her, she becomes annoyed.</p>
+        <h3><u>Exercise & Play</u></h3>
+        <p>If Eileen is in a neutral state and you exercise with her, she becomes happy.</p>
+        <p>If Eileen is happy and you exercise with her, she starts getting tired.</p>
+        <p>If Eileen is tired and you try to make her exercise, she passes out</p>
+        <p>If Eileen is passed out and you try to exercise with her, she ignores your command and continues to sleep.</p>
+        <p>If Eileen has had too much to eat and you make her exercise, she becomes excited.</p>
+        <p>If Eileen excited and you keep exercising, she becomes less excited then tired before passing out.</p>
+        <h3><u>Poke/Annoy</u></h3>
+        <p>This command often has a negative outcome. For example, If Eileen is in a good mood, and you poke/annoy her,</p>
+        <p>she becomes angry or annoyed. whereas if she is in a bad mood and you poke/annoy her, she becomes</p>
+        <p>sad/tired.</p>
+        <h3><u>Do CS project</u></h3>
+        <p>If Eileen is in a neutral state and you make her do the CS project, she attempts to do it with a positive mood.</p>
+        <p>If Eileen had attempted to do the project and you make her do it again, she becomes annoyed and confused.</p>
+        <p>If Eileen is annoyed or confused by the project, and you make her do the project, she gives up.</p>
+        <p>If Eileen is in a good mood and you make her do the project, she completes the project.</p>
+        <p>If Eileen is in a bad mood and you make her do the project, she does it but gets fustrated by the project and gives up.</p>
+        <h3><u>Compliment</u></h3>
+        <p>Whenever a compliment is payed to Eileen, she smiles and compliments back.</p>
+        <h3><u>Wake up</u></h3>
+        <p>If Eileen passes out because of exhaution and you wake her up, she becomes annoyed</p>
+        <p>If Eileen is not asleep and you try to wake her up, she ignores your command and lets you now that she is already awake.</p>
+        <h3><u>Refresh</u></h3>
+        <p>This function is used to return Eileen to her original state. No matter what state Eileen is in, if this button is clicked,</p>
+        <p>she returns back to her neutral state.</p>
+    <hr>
+    <h1>State Machine</h1> 
+    <img src="StateMachine.png" width="900px">
+    <h2>Description of Code(For developers)</h2>
+    <p>This code runs on functions. That is, each button has a specific function. For example, the feed button reads the function below in order for the action to be carried out:</p>
+    <h3>Feed: </h3>
+    <img width="700px" src="Function.png" >
+    <p>Each function is made up of multiple If statements. If statements are used to ensure that the pet reacts differently depending on how many times the button is clicked. I ensured if strenuous functions such as Exercise or eating food were done too many times, the pet would get angry. I inserted a timeout function which would cause your bet to get angry if you do not press any buttons within 10 seconds.</p>
+    <img src="Screenshot (11).png" width="700px">
+    <p>For each function to react to the timeout function, i used a clearTimeout function which clears the timeout if the button is pressed. I used a div because i had created two seperate functions to be run and viewed for each buttons. The two different functions show Eileen's reaction to the button and which of her 5 emotions stimulated the reaction. The div allows the two different images to be on the same line beside each other.</p>
+    <a href=https://www.cs.drexel.edu/~oo65/Project3/Project%203.html>Click to go back to virtual pet</a> 
+    </div>
+    </div>
+    </body>
+    </html>>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .Emotion { 
+    display: flex;
+    flex-wrap: nowrap;
+    }
+    .Emotion .Mood{
+        float: right;
+        width: 50%;
+        padding: 10px;
+        height: 300px;
+        text-align: center;
+    }
+    .Emotion .Eileen{
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 300px;
+        text-align: center;
+    }
+
+
+    .threecolumn{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+   .threecolumn .leftcolumn {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    font-size:20px;
+
+    }
+    .threecolumn .midcolumn {
+    float: center;
+    width: 33.33%;
+    padding: 10px;
+    font-size:20px;
+    }
+    .threecolumn .rightcolumn {
+    float: right;
+    width: 33.33%;
+    padding: 10px;
+    font-size:20px;
+    }
+
+
+    body{
+        background: rgba(76, 175, 80, 0.3); 
+    }
+
+    
+    </style>
+    <script>
+        
+        var mood = ["Neut.jpg", "Angry.gif", "Becomesad.gif", "content.jpg", "hmm.jpg", "Fear.png", "joyos.jpeg", "Disgusted.jpg", "Dead.jpg", "joy.jpg", "Angry.png", "Cry.gif", "Sad.png", "Passout.gif"]
+        var timer = setTimeout(function(){switchAngry()}, 10000);
+        function switchAngry(){
+            document.getElementById("Emot").src= "Really.jpg";
+            document.getElementById("Eileenstatus").innerHTML = "You are the worst!";
+            document.getElementById("Eil").src= "Angry.png";
+        }
+        
+        function feed() {
+            clearTimeout(timer);
+            if (document.getElementById("Emot").getAttribute('src') == "Neut.jpg") { // checks if the current image is neutral.
+                document.getElementById("Emot").src = "Happy.jpg"; // if true, change to joy.
+                document.getElementById("Eileenstatus").innerHTML = "Mmm that was tasty";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Happy.jpg") {
+                document.getElementById("Emot").src = "Really.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "Ugh, are you trying to make me fat!";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Really.jpg") {
+                document.getElementById("Emot").src = "What.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "Stop!"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Surprise.jpg") { //if less tired, makes passout.
+                document.getElementById("Emot").src = "Blush.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "Nothing like a good meal after some exercise."
+            } else if (document.getElementById("Emot").getAttribute('src') == "Blush.jpg") {
+                document.getElementById("Emot").src = "Really.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "Ugh, are you trying to make me fat!";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Good.jpg") {
+                document.getElementById("Emot").src = "Really.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "No no no!";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Damn.jpg") {
+                document.getElementById("Emot").src = "Really.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "No no no!";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Sleepy.jpg") {
+                document.getElementById("Emot").src = "Happy.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "Thanks, I feel so refreshed";
+            } else if (document.getElementById("Emot").getAttribute('src') == "What.jpg") {
+                document.getElementById("Emot").src = "Really.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "No, thank you";
+            }
+            if (document.getElementById("Eil").getAttribute('src') == "White.jpg") { //if Eileen's emotion is neutral, it makes her happy.
+                document.getElementById("Eil").src = "joyos.jpeg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "joyos.jpeg") { //If Eileen's emotion is happy, it makes her disgusted.
+                document.getElementById("Eil").src = "Disgusted.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "content.jpg") {
+                document.getElementById("Eil").src = "hmm.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "hmm.jpg") {
+                document.getElementById("Eil").src = "Angry.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Angry.gif") {
+                document.getElementById("Eil").src = "Angry.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Becomesad.gif") {
+                document.getElementById("Eil").src = "Angry.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Outta.png") {
+                document.getElementById("Eil").src = "Angry.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Compliment.gif") {
+                document.getElementById("Eil").src = "Disgusted.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Passout.gif") {
+                document.getElementById("Eil").src = "joyos.jpeg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Feared.png") {
+                document.getElementById("Eil").src = "Disgusted.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Fear.jpg") {
+                document.getElementById("Eil").src = "hmm.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Sad.png") {
+                document.getElementById("Eil").src = "Angry.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Dismeet.png") {
+                document.getElementById("Eil").src = "joyos.jpeg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Explode.gif") {
+                document.getElementById("Eil").src = "Disgusted.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Sadd.jpg") {
+                document.getElementById("Eil").src = "joyos.jpeg";
+            }
+        }
+        function play() {
+            clearTimeout(timer);
+            if (document.getElementById("Emot").getAttribute('src') == "Neut.jpg") {
+                document.getElementById("Emot").src = "Happy.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "Yay! I'm having so much fun!"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Happy.jpg") { //if happy, make less happy.
+                document.getElementById("Emot").src = "Surprise.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "I think we've had enough fun. I'm getting tired."
+            } else if (document.getElementById("Emot").getAttribute('src') == "Surprise.jpg") { //if less happy, makes tired.
+                document.getElementById("Emot").src = "Damn.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "I'm so tired."
+            } else if (document.getElementById("Emot").getAttribute('src') == "Damn.jpg") { //if less tired, makes passout.
+                document.getElementById("Emot").src = "Sleepy.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "Eileen passed out because of exhaution."
+            } else if (document.getElementById("Emot").getAttribute('src') == "Really.jpg") {
+                document.getElementById("Emot").src = "Good.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "Hmm, this is a great way to lose all that fat";
+            } else if (document.getElementById("Emot").getAttribute('src') == "What.jpg") {
+                document.getElementById("Emot").src = "Good.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "Hmm, this is a great way to lose all that fat";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Good.jpg") {
+                document.getElementById("Emot").src = "Happy.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "Yay! I'm having so much fun!"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Blush.jpg") {
+                document.getElementById("Emot").src = "Happy.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "Fun again? i wish this day would never end."
+            } else if (document.getElementById("Emot").getAttribute('src') == "Sleepy.jpg") {
+                document.getElementById("Emot").src = "Sleepy.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "Eileen ignores your command and continues sleeping"
+            }
+            if (document.getElementById("Eil").getAttribute('src') == "White.jpg") { //if Eileen's emotion is neutral, it makes her happy.
+                document.getElementById("Eil").src = "joyos.jpeg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "joyos.jpeg") { //If Eileen's emotion is happy, it makes her disgusted.
+                document.getElementById("Eil").src = "content.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "content.jpg") { //If Eileen's emotion is happy, it makes her disgusted.
+                document.getElementById("Eil").src = "Becomesad.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Becomesad.gif") { //If Eileen's emotion is happy, it makes her disgusted.
+                document.getElementById("Eil").src = "Passout.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Disgusted.jpg") { //If Eileen's emotion is happy, it makes her disgusted.
+                document.getElementById("Eil").src = "hmm.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "hmm.jpg") { //If Eileen's emotion is happy, it makes her disgusted.
+                document.getElementById("Eil").src = "joyos.jpeg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Angry.png") {
+                document.getElementById("Eil").src = "hmm.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Angry.gif") {
+                document.getElementById("Eil").src = "hmm.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Compliment.gif") {
+                document.getElementById("Eil").src = "joyos.jpeg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Outta.png") {
+                document.getElementById("Eil").src = "Passout.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Fear.jpg") {
+                document.getElementById("Eil").src = "Becomesad.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Sad.png") {
+                document.getElementById("Eil").src = "hmm.jpg";
+            }else if (document.getElementById("Eil").getAttribute('src') == "Sadd.jpg") {
+                document.getElementById("Eil").src = "joyos.jpeg";
+            }
+        }
+        function start() {
+            if (document.getElementById("Emot").getAttribute('src') == "Happy.jpg") {
+                document.getElementById("Emot").src = "Neut.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Really.jpg") {
+                document.getElementById("Emot").src = "Neut.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Damn.jpg") {
+                document.getElementById("Emot").src = "Neut.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Good.jpg") {
+                document.getElementById("Emot").src = "Neut.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Blush.jpg") {
+                document.getElementById("Emot").src = "Neut.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Surprise.jpg") {
+                document.getElementById("Emot").src = "Neut.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Sleepy.jpg") {
+                document.getElementById("Emot").src = "Neut.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "";
+            } else if (document.getElementById("Emot").getAttribute('src') == "What.jpg") {
+                document.getElementById("Emot").src = "Neut.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "";
+            }
+            if (document.getElementById("Eil").getAttribute('src') == "joyos.jpeg") {
+                document.getElementById("Eil").src = "White.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Disgusted.jpg") {
+                document.getElementById("Eil").src = "White.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "hmm.jpg") {
+                document.getElementById("Eil").src = "White.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Angry.png") {
+                document.getElementById("Eil").src = "White.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "content.jpg") {
+                document.getElementById("Eil").src = "White.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Becomesad.gif") {
+                document.getElementById("Eil").src = "White.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Dead.jpg") {
+                document.getElementById("Eil").src = "White.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Fear.png") {
+                document.getElementById("Eil").src = "White.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Cry.gif") {
+                document.getElementById("Eil").src = "White.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Passout.gif") {
+                document.getElementById("Eil").src = "White.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Sad.png") {
+                document.getElementById("Eil").src = "White.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Angry.gif") {
+                document.getElementById("Eil").src = "White.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Compliment.gif") {
+                document.getElementById("Eil").src = "White.jpg";
+            }else if (document.getElementById("Eil").getAttribute('src') == "Fear.jpg") {
+                document.getElementById("Eil").src = "White.jpg";
+              } else if (document.getElementById("Eil").getAttribute('src') == "Feared.png") {
+                document.getElementById("Eil").src = "White.jpg";
+            }
+        }
+        function wake() {
+            clearTimeout(timer);
+            if (document.getElementById("Emot").getAttribute('src') == "Sleepy.jpg") {
+                document.getElementById("Emot").src = "Really.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen is upset you woke her up"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Neut.jpg") {
+                document.getElementById("Emot").src = "Neut.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen is already awake";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Damn.jpg") {
+                document.getElementById("Emot").src = "Damn.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen is already awake";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Good.jpg") {
+                document.getElementById("Emot").src = "Good.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen is already awake";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Blush.jpg") {
+                document.getElementById("Emot").src = "Blush.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen is already awake";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Surprise.jpg") {
+                document.getElementById("Emot").src = "Surprise.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen is already awake";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Really.jpg") {
+                document.getElementById("Emot").src = "Really.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen is already awake";
+            } else if (document.getElementById("Emot").getAttribute('src') == "What.jpg") {
+                document.getElementById("Emot").src = "What.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen is already awake";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Happy.jpg") {
+                document.getElementById("Emot").src = "Happy.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen is already awake";
+            }
+            if (document.getElementById("Eil").getAttribute('src') == "Passout.gif") {
+                document.getElementById("Eil").src = "Angry.png";
+            }
+        }
+        function comp() {
+            clearTimeout(timer);
+            if (document.getElementById("Emot").getAttribute('src') == "Neut.jpg") {
+                document.getElementById("Emot").src = "Blush.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Thank you, You're amazing!"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Sleepy.jpg") {
+                document.getElementById("Emot").src = "Blush.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Thank you, You're amazing!"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Blush.jpg") {
+                document.getElementById("Emot").src = "Blush.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Thank you, You're amazing!"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Happy.jpg") {
+                document.getElementById("Emot").src = "Blush.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Thank you, You're amazing!"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Really.jpg") {
+                document.getElementById("Emot").src = "Blush.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Thank you, You're amazing!"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Damn.jpg") {
+                document.getElementById("Emot").src = "Blush.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Thank you, You're amazing!"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Good.jpg") {
+                document.getElementById("Emot").src = "Blush.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Thank you, You're amazing!"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Surprise.jpg") {
+                document.getElementById("Emot").src = "Blush.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Thank you, You're amazing!"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Sleepy.jpg") {
+                document.getElementById("Emot").src = "Blush.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Thank you, You're amazing!"
+            } else if (document.getElementById("Emot").getAttribute('src') == "What.jpg") {
+                document.getElementById("Emot").src = "Blush.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Thank you, You're amazing!"
+            }
+            if (document.getElementById("Eil").getAttribute('src') == "White.jpg") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Disgusted.jpg") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "hmm.jpg") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Angry.png") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "content.jpg") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Becomesad.gif") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Dead.jpg") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Fear.png") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Cry.gif") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Passout.gif") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Sad.png") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Angry.gif") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "joyos.jpeg") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Fear.jpg") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Feared.png") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Outta.png") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Sadd.jpg") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Dismeet.png") {
+                document.getElementById("Eil").src = "Compliment.gif";
+            }
+        }
+        function CS() {
+            clearTimeout(timer);
+            if (document.getElementById("Emot").getAttribute('src') == "Neut.jpg") {
+                document.getElementById("Emot").src = "Good.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "This is not so bad";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Good.jpg") {
+                document.getElementById("Emot").src = "Surprise.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Hmm, I guess its not as easy as i thought"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Surprise.jpg") {
+                document.getElementById("Emot").src = "What.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "What?! this makes no sense"
+            } else if (document.getElementById("Emot").getAttribute('src') == "What.jpg") {
+                document.getElementById("Emot").src = "Damn.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Na mate im outta here"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Happy.jpg") {
+                document.getElementById("Emot").src = "Happy.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen completed the project"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Really.jpg") {
+                document.getElementById("Emot").src = "What.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "What?! this makes no sense"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Sleepy.jpg") {
+                document.getElementById("Emot").src = "Sleepy.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen is asleep"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Damn.jpg") {
+                document.getElementById("Emot").src = "Damn.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Na mate im outta here"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Blush.jpg") {
+                document.getElementById("Emot").src = "Happy.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen completed the project"
+            }
+            if (document.getElementById("Eil").getAttribute('src') == "White.jpg") {
+                document.getElementById("Eil").src = "content.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "content.jpg") {
+                document.getElementById("Eil").src = "Fear.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Fear.jpg") {
+                document.getElementById("Eil").src = "Feared.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Feared.png") {
+                document.getElementById("Eil").src = "Outta.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Compliment.gif") {
+                document.getElementById("Eil").src = "joyos.jpeg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "hmm.jpg") {
+                document.getElementById("Eil").src = "joyos.jpeg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Disgusted.jpg") {
+                document.getElementById("Eil").src = "Feared.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Angry.png") {
+                document.getElementById("Eil").src = "Outta.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Angry.gif") {
+                document.getElementById("Eil").src = "Feared.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Becomesad.gif") {
+                document.getElementById("Eil").src = "Outta.png";
+            }else if (document.getElementById("Eil").getAttribute('src') == "Passout.gif") {
+                document.getElementById("Eil").src = "Fear.png";
+            }else if (document.getElementById("Eil").getAttribute('src') == "Sad.png") {
+                document.getElementById("Eil").src = "Feared.png";
+            }else if (document.getElementById("Eil").getAttribute('src') == "Dismeet.png") {
+                document.getElementById("Eil").src = "content.jpg";
+            }
+        }
+        function poke() {
+            clearTimeout(timer);
+            if (document.getElementById("Emot").getAttribute('src') == "Sleepy.jpg") {
+                document.getElementById("Emot").src = "Really.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "Eileen is upset you woke her up"
+            } else if (document.getElementById("Emot").getAttribute('src') == "Neut.jpg") {
+                document.getElementById("Emot").src = "Really.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "I dont like this. Please stop";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Damn.jpg") {
+                document.getElementById("Emot").src = "Really.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "You're annoying";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Good.jpg") {
+                document.getElementById("Emot").src = "Neut.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "That's not funny";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Blush.jpg") {
+                document.getElementById("Emot").src = "Really.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "STOP IT!!!";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Surprise.jpg") {
+                document.getElementById("Emot").src = "Really.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "That's real immature";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Really.jpg") {
+                document.getElementById("Emot").src = "Sleepy.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "I'm tired of your nonsense. ZZZ";
+            } else if (document.getElementById("Emot").getAttribute('src') == "What.jpg") {
+                document.getElementById("Emot").src = "What.jpg"
+                document.getElementById("Eileenstatus").innerHTML = "But why?!";
+            } else if (document.getElementById("Emot").getAttribute('src') == "Happy.jpg") {
+                document.getElementById("Emot").src = "Really.jpg";
+                document.getElementById("Eileenstatus").innerHTML = "You just spoilt my day";
+            }
+            if (document.getElementById("Eil").getAttribute('src') == "White.jpg") {
+                var timer = setTimeout(function(){switchAngry()}, 10000);
+                document.getElementById("Eil").src = "Sad.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "content.jpg") {
+                document.getElementById("Eil").src = "Angry.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Fear.jpg") {
+                document.getElementById("Eil").src = "Angry.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Feared.png") {
+                document.getElementById("Eil").src = "Angry.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Compliment.gif") {
+                document.getElementById("Eil").src = "Angry.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "hmm.jpg") {
+                document.getElementById("Eil").src = "Dismeet.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Disgusted.jpg") {
+                document.getElementById("Eil").src = "Feared.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Angry.png") {
+                document.getElementById("Eil").src = "Sadd.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Angry.gif") {
+                document.getElementById("Eil").src = "Passout.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Becomesad.gif") {
+                document.getElementById("Eil").src = "cry.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Sad.png") {
+                document.getElementById("Eil").src = "Sadd.jpg";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Sadd.jpg") {
+                document.getElementById("Eil").src = "Angry.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "joyos.jpeg") {
+                document.getElementById("Eil").src = "Angry.png";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Dismeet.png") {
+                document.getElementById("Eil").src = "Explode.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "Outta.png") {
+                document.getElementById("Eil").src = "Becomesad.gif";
+            } else if (document.getElementById("Eil").getAttribute('src') == "cry.gif") {
+                document.getElementById("Eil").src = "Angry.png";
+        } 
+        }
+    </script>
+</head>
+
+<body>
+
+    <center>
+        <h1>Hi-Leen:See how Eileen's different emotions react to your actions</h1>
+    </center>
+    <div class="Emotion">
+        <div class="Eileen">
+            <img width="300px" id="Emot" src="Neut.jpg">
+        </div>
+        <div class="Mood">
+            <img width="300px" id="Eil" src="White.jpg">
+        </div>
+    </div>
+    <center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 id="Eileenstatus"></h1>
+        <button style="margin:15px" type="button" onclick="setTimeout(feed, 300);">Feed Eileen</button>
+        <button style="margin:15px" type="button" onclick="setTimeout(play, 300);">Exercise & Play games with Eileen</button>
+        <button style="margin:15px" type="button" onclick="setTimeout(poke, 300);">Poke/Annoy</button>
+        <p></p>
+        <button style="margin:15px" type="button" onclick="setTimeout(CS, 300);">Do CS project</button>
+        <button style="margin:15px" type="button" onclick="setTimeout(comp, 300);">Compliment Eileen</button>
+        <button style="margin:15px" type="button" onclick="setTimeout(wake, 300);">Wake up Eileen</button>
+        <p></p>
+        <button style="margin:15px" type="button" onclick="setTimeout(start, 300);">Refresh</button>
+        <p></p>
+        <a href=https://www.cs.drexel.edu/~oo65/Project3/Project%203%20documentation.html>Click to go to description</a>
+        <h1>Eileen's Emotions</h1>
+    </center>
+    <div class="threecolumn">
+        <div class="leftcolumn" style="background-color:#aaa;">
+            <p align="center"><img style="padding:15px; margin-right:15px; width:130px; height:250px" src="Joyy.png"></p>
+            <p>Meet Joy: She is the first emotion to manifest itself in Eileen's head and does her best to help her
+                human girl make happy memories.</p>
+            <p align="center"><img style="padding:15px; margin-right:15px; width:150px;" src="Angry.png"></p>
+            <p>Meet Angry: He does his best to protect Eileen from injustices like no dessert.</p>
+        </div>
+        <div class="midcolumn" style="background-color:#bbb;">
+            <p><img style="padding:15px; margin-right:15px; width:160px; height:250px" src="Fear.png"></p>
+            <p>Meet Fear: He is on a constant lookout for every possible danger that could befall Eileen whether it's
+                the first day of school or nightmarish clowns.</p>
+            <p><img style="padding:15px; margin-right:15px; width:160px;" src="Sad.png"></p>
+            <p>Meet Sadness: None of the emotions, not even Sadness herself, understand why she exists.</p>
+        </div>
+        <div class="rightcolumn" style="background-color:#ccc;">
+            <p><img style="padding:15px; margin-right:15px; width:160px;" src="Dismeet.png"></p>
+            <p>Meet Disgust: She is always looking out for Eileen's best interests like making sure she doesn't wear
+                tacky clothes or get poisoned by the mysterious green substance known as broccoli (yuck!).</p>
+        </div>
+    </div>
+</body>
+
+</html>
